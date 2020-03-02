@@ -1,0 +1,51 @@
+.container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-column-gap: 15px;
+    grid-template-rows: 1fr 20px;
+    padding: 5px 10px 0 10px;
+}
+
+.avatar {
+    display: grid;
+    align-items: end;
+}
+
+.avatar img {
+    display: block;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.text {
+    border-radius: 15px;
+    background-color: papayawhip;
+    padding: 3px 6px;
+    min-height: 40px;
+    min-width: 50%;
+}
+
+.likeDate {
+    display: grid;
+    grid-template-columns: 40px 40px;
+    justify-content: start;
+    grid-column-gap: 20px;
+    padding: 0 20px;
+}
+
+.like {
+    display: grid;
+    grid-template-columns: 20px 20px;
+    grid-column-gap: 3px;
+    justify-content: center;
+    align-content: center;
+}
+
+.like svg {
+    height: 17px;
+    color: darkred;
+}
+
+.date {
+
+}

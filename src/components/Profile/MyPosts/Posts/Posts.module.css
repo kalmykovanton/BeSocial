@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    align-content: start;
+    max-height: 1000px;
+    overflow: auto;
+    grid-row-gap: 10px;
+}

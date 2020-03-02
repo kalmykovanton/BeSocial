@@ -1,0 +1,6 @@
+.content {
+    grid-area: content;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-rows: 120px 170px 1fr;
+}

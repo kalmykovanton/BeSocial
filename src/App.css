@@ -1,0 +1,33 @@
+.app-wrapper {
+  width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: Calibri, sans-serif;
+  display: grid;
+  grid-template-rows: 60px 1fr 40px;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas:
+    "header header"
+    "nav content"
+    "footer footer";
+
+}
+
+@media (max-width: 1190px) {
+  .app-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-wrapper {
+    min-height: 100vh;
+    grid-template-rows: 60px 1fr 1fr 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "footer";
+  }
+}
