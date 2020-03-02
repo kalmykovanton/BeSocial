@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './Post.module.css';
 import avatar from './../../../../../img/ava_kot.jpg';
 
-const Post = () => {
+const Post = (props) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.avatar}>
 				<img src={avatar} alt="Ava"/>
 			</div>
 				<div className={styles.text}>
-					Lorem ipsum dolor sit amet
+					{props.message}
 				</div>
 			<div></div>
 			<div className={styles.likeDate}>
@@ -27,9 +27,9 @@ const Post = () => {
 							      0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
 						</svg>
 					</div>
-					<div> 88</div>
+					<div> {props.likesCounter}</div>
 				</div>
-				<div className={styles.date}>Date</div>
+				<div className={styles.date}>{props.date}</div>
 			</div>
 		</div>
 	);

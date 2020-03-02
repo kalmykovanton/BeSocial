@@ -27,7 +27,7 @@
 
 .likeDate {
     display: grid;
-    grid-template-columns: 40px 40px;
+    grid-template-columns: 40px 150px;
     justify-content: start;
     grid-column-gap: 20px;
     padding: 0 20px;
@@ -47,5 +47,7 @@
 }
 
 .date {
-
+    font-size: 13px;
+    font-family: monospace;
+    font-weight: bold;
 }
