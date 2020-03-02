@@ -4,7 +4,7 @@ import styles from './NewPost.module.css';
 const NewPost = () => {
 	return (
 		<div className={styles.container}>
-			<textarea className={styles.text} placeholder={"what about you thinkin?.."}>
+			<textarea className={styles.text} placeholder={"what about you thinking?.."}>
 			</textarea>
 			<div className={styles.buttons}>
 				<button className={styles.button}>Post</button>
