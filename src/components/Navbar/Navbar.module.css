@@ -5,11 +5,15 @@
 }
 
 .item a {
-    color: white;
+    color: #222222;
     text-decoration: none;
     font-weight: bold;
 }
 
-.active a {
-    color: #222222;
+.item {
+    padding: 8px;
+}
+
+.item a.active {
+    color: white;
 }
