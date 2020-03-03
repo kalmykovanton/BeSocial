@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.dialogs {
+    padding: 15px;
+    border-right: 2px solid lightgray;
+}
+
+.dialog {
+    padding: 10px 0;
+    color: midnightblue;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.active {
+    color: red;
+}
+
+.messagesContainer {
+    display: grid;
+    align-content: space-between;
+    grid-template-rows: 1fr 130px;
+    padding: 25px;
+}
+
+.messages {
+    display: grid;
+    align-content: end;
+    padding: 20px 0;
+}
+
+.message {
+    font-size: 18px;
+    background-color: papayawhip;
+    border-radius: 15px;
+    margin-top: 7px;
+}

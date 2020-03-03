@@ -7,7 +7,7 @@ const MyPosts = () => {
 	return (
 		<div className={styles.container}>
 			<h3>My Posts</h3>
-			<NewPost/>
+			<NewPost placeholder={"what about you thinking?.."}/>
 			<Posts/>
 		</div>
 	)

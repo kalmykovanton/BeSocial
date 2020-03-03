@@ -36,6 +36,14 @@
     font-weight: bold;
 }
 
+.post {
+   background-color: darkseagreen;
+}
+
+.clear {
+    background-color: lightpink;
+}
+
 @media (max-width: 767px) {
     .container {
         width: 100%;
