@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import logo from '../../img/logo.png';
 
-const Header = () => {
+const Header = (props) => {
 	return (
 		<header className={styles.header}>
 			<div>

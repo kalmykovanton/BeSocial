@@ -3,7 +3,7 @@ import styles from './MyPosts.module.css';
 import Posts from "./Posts/Posts";
 import NewPost from "./NewPost/NewPost";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 	return (
 		<div className={styles.container}>
 			<h3>My Posts</h3>

@@ -4,7 +4,7 @@ import Banner from "./Banner/banner";
 import Info from "./Info/Info";
 import MyPosts from "./MyPosts/MyPosts";
 
-const Profile = () => {
+const Profile = (props) => {
 	return (
 		<div className={styles.content}>
 			<Banner/>

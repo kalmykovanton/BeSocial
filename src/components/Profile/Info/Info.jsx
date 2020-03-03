@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Info.module.css';
 
-const Info = () => {
+const Info = (props) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.avatar}>

@@ -3,17 +3,3 @@
     background-color: coral;
     padding: 20px;
 }
-
-.item a {
-    color: #222222;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.item {
-    padding: 8px;
-}
-
-.item a.active {
-    color: white;
-}

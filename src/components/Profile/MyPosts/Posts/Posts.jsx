@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Posts.module.css';
 import Post from "./Post/Post";
 
-const Posts = () => {
+const Posts = (props) => {
 	let now = new Date();
 	let date = `${now.getDate()}.${now.getMonth()}.${now.getFullYear()}  
 	${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
