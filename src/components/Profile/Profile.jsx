@@ -5,11 +5,12 @@ import Info from "./Info/Info";
 import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
-	return (
-		<div className={styles.content}>
+
+return (
+		<div className={styles.content} >
 			<Banner/>
 			<Info/>
-			<MyPosts/>
+			<MyPosts posts={props.posts}/>
 		</div>
 	)
 };

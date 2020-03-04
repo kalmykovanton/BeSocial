@@ -5,10 +5,10 @@ import NewPost from "./NewPost/NewPost";
 
 const MyPosts = (props) => {
 	return (
-		<div className={styles.container}>
+		<div className={styles.container}/* posts={props.posts}*/>
 			<h3>My Posts</h3>
 			<NewPost placeholder={"what about you thinking?.."}/>
-			<Posts/>
+			<Posts posts={props.posts}/>
 		</div>
 	)
 };
