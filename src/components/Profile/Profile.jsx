@@ -10,7 +10,7 @@ return (
 		<div className={styles.content} >
 			<Banner/>
 			<Info/>
-			<MyPosts posts={props.posts}/>
+			<MyPosts state={props.state}/>
 		</div>
 	)
 };
