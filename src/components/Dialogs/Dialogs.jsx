@@ -6,20 +6,37 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
+
+	let dialogs = [
+		{id: 1, name: "Olechka"},
+		{id: 2, name: "Arthour"},
+		{id: 3, name: "Ruslan"},
+		{id: 4, name: "Dima"},
+		{id: 5, name: "Artyom"}
+	];
+
+	let messages = [
+		{id: 1, message: "Hello!"},
+		{id: 2, message: "How are you?"},
+		{id: 3, message: "Have a nice day!"},
+		{id: 4, message: "I'm fine))"},
+		{id: 5, message: "Good Bye!"}
+	];
+
+	let dialogsItem = dialogs
+		.map( dialog => <DialogItem id={dialog.id} name={dialog.name}/> );
+
+	let messagesItem = messages
+		.map( message => <Message id={message.id} message={message.message}/> );
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.dialogs}>
-				<DialogItem id={1} name={"Olechka"}/>
-				<DialogItem id={1} name={"Arthour"}/>
-				<DialogItem id={1} name={"Ruslan"}/>
-				<DialogItem id={1} name={"Dima"}/>
-				<DialogItem id={1} name={"Artyom"}/>
+				{dialogsItem}
 			</div>
 			<div className={styles.messagesContainer}>
 				<div className={styles.messages}>
-					<Message message={"Hello!"}/>
-					<Message message={"How are you?"}/>
-					<Message message={"Have a nice day!"}/>
+					{messagesItem}
 				</div>
 				<NewPost placeholder={"Your message..."}/>
 			</div>
