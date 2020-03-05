@@ -2,13 +2,26 @@ import React from 'react';
 import styles from './NewPost.module.css';
 
 const NewPost = (props) => {
+
+	let newPostElement = React.createRef();
+
+	const addPost = () => {
+
+	}
+
+	const clearTextArea = () => {
+		newPostElement.current.value = '';
+	}
+
 	return (
 		<div className={styles.container}>
-			<textarea className={styles.text} placeholder={props.placeholder}>
-			</textarea>
+			<textarea ref={newPostElement} className={styles.text}
+			          placeholder={props.placeholder} ></textarea>
 			<div className={styles.buttons}>
-				<button className={`${styles.button} ${styles.post}`}>Post</button>
-				<button className={`${styles.button} ${styles.clear}`}>Clear</button>
+				<button onClick={ addPost }
+				        className={`${styles.button} ${styles.post}`}>Post</button>
+				<button onClick={ clearTextArea }
+				        className={`${styles.button} ${styles.clear}`}>Clear</button>
 			</div>
 		</div>
 	)
