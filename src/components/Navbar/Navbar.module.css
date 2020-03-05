@@ -1,5 +1,6 @@
 .nav {
     grid-area: nav;
-    background-color: coral;
+    background-color: #ff8b51;
     padding: 20px;
+    border-radius: 10px;
 }

@@ -3,6 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
+import Friends from "./components/Friends/Friends";
 import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import Dialogs from "./components/Dialogs/Dialogs";
@@ -19,6 +20,8 @@ const App = (props) => {
 				<div className={"app-wrapper-content"}>
 					<Route path={'/profile'} render={() =>
 						<Profile state={props.state.profilePage}/>}/>
+					<Route path={'/friends'} render={() =>
+						<Friends state={props.state.friendsPage}/>}/>
 					<Route path={'/dialogs'} render={() =>
 						<Dialogs state={props.state.dialogsPage}/>}/>
 					<Route path={'/news'} component={News}/>

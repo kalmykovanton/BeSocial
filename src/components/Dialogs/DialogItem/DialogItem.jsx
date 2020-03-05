@@ -8,7 +8,7 @@ const DialogItem = (props) => {
 
 	return (
 		<div className={styles.dialog}>
-			<NavLink to={path}>{props.name}</NavLink>
+			<NavLink to={path} className={styles.nonActive} activeClassName={styles.active}>{props.name}</NavLink>
 		</div>
 	)
 };

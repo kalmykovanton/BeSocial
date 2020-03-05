@@ -4,16 +4,19 @@
     margin: 0 auto;
     font-family: Calibri, sans-serif;
     display: grid;
-    grid-template-rows: 60px 1fr 40px;
+    grid-template-rows: 60px 1fr 30px;
     grid-template-columns: 2fr 10fr;
+    grid-gap: 4px;
     grid-template-areas: "header header" "nav content" "footer footer";
+    background-color: white;
 
 }
 
 .app-wrapper-content {
     grid-area: content;
-    background-color: aquamarine;
     display: grid;
+    border-radius: 10px;
+    grid-column-gap: 3px;
 }
 
 @media (max-width: 1190px) {

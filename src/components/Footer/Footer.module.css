@@ -1,9 +1,11 @@
 .footer {
     grid-area: footer;
     text-align: center;
-    background-color: dimgrey;
-    color: white;
+    background-color: #ff8b51;
+    color: papayawhip;
+    font-weight: bold;
     display: grid;
     align-items: center;
     justify-items: center;
+    border-radius: 10px 10px 0 0;
 }

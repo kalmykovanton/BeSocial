@@ -6,6 +6,7 @@ const Navbar = (props) => {
 	return (
 		<nav className={styles.nav}>
 			<NavItem id={"/profile"} name={"Profile"}/>
+			<NavItem id={"/friends"} name={"Friends"}/>
 			<NavItem id={"/dialogs"} name={"Dialogs"}/>
 			<NavItem id={"/news"} name={"News"}/>
 			<NavItem id={"/music"} name={"Music"}/>

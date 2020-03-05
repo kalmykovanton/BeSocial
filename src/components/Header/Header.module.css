@@ -1,9 +1,10 @@
 .header {
     grid-area: header;
-    background-color: aqua;
+    background-color: #ff8b51;
     display: grid;
     grid-template-columns: 80px 1fr;
     align-items: center;
+    border-radius: 0 0 10px 10px;
 }
 
 .header img {
@@ -13,5 +14,5 @@
     font-size: 36px;
     text-align: center;
     font-weight: bold;
-    color: darkblue;
+    color: #222222;
 }

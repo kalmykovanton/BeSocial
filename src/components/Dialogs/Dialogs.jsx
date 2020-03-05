@@ -3,6 +3,7 @@ import styles from './Dialogs.module.css';
 import NewPost from './../Profile/MyPosts/NewPost/NewPost';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import Friend from './../Friends/Friend/Friend';
 
 const Dialogs = (props) => {
 

@@ -32,10 +32,19 @@ let state = {
 		],
 		dialogs: [
 			{id: 1, name: "Olechka"},
-			{id: 2, name: "Arthour"},
+			{id: 2, name: "Arthur"},
 			{id: 3, name: "Ruslan"},
 			{id: 4, name: "Dima"},
 			{id: 5, name: "Artyom"}
+		]
+	},
+	friendsPage: {
+		friends: [
+			{id: 1, name: "Olechka", img: "/img/Olechka.jpg"},
+			{id: 2, name: "Arthur", img: "./../img/Arthur.jpg"},
+			{id: 3, name: "Ruslan", img: "./../img/Ruslan.jpg"},
+			{id: 4, name: "Dima", img: "./../img/Dima.jpg"},
+			{id: 5, name: "Artyom", img: "./../img/Artyom.jpg"}
 		]
 	}
 }

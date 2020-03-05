@@ -3,4 +3,6 @@
     background-color: papayawhip;
     border-radius: 15px;
     margin-top: 7px;
+    padding: 3px 5px;
+    justify-self: start;
 }

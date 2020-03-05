@@ -8,18 +8,13 @@
     height: 130px;
 }
 
-/*.container h4 {*/
-/*    font-weight: bold;*/
-/*    font-size: 20px;*/
-/*    color: darkblue;*/
-/*}*/
-
 .text {
     width: 100%;
     grid-column: 1 / 3;
     border-radius: 20px;
     padding: 7px;
     min-height: 60px;
+    background-color: papayawhip;
 }
 
 .buttons {
@@ -34,14 +29,16 @@
 .button {
     border-radius: 20px;
     font-weight: bold;
+    font-size: 20px;
+    background-color: #ff8b51;
 }
 
 .post {
-   background-color: darkseagreen;
+   color: darkgreen;
 }
 
 .clear {
-    background-color: lightpink;
+    color: darkred;
 }
 
 @media (max-width: 767px) {
