@@ -6,7 +6,8 @@ const NewPost = (props) => {
 	let newPostElement = React.createRef();
 
 	const addPost = () => {
-
+		props.addPost(newPostElement.current.value);
+		newPostElement.current.value = '';
 	}
 
 	const clearTextArea = () => {

@@ -1,8 +1,7 @@
 .message {
-    font-size: 18px;
     background-color: papayawhip;
-    border-radius: 15px;
+    border-radius: 10px;
     margin-top: 7px;
-    padding: 3px 5px;
+    padding: 4px 7px;
     justify-self: start;
 }

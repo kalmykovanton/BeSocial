@@ -1,19 +1,11 @@
 import React from 'react';
 import styles from './Dialogs.module.css';
-import NewPost from './../Profile/MyPosts/NewPost/NewPost';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import Friend from './../Friends/Friend/Friend';
+import NewMessage from './NewMessage/NewMessage';
 
 const Dialogs = (props) => {
-
-	let messages = [
-		{id: 1, message: "Hello!"},
-		{id: 2, message: "How are you?"},
-		{id: 3, message: "Have a nice day!"},
-		{id: 4, message: "I'm fine))"},
-		{id: 5, message: "Good Bye!"}
-	];
 
 	let dialogsItem = props.state.dialogs
 		.map( dialog => <DialogItem id={dialog.id} name={dialog.name}/> );
@@ -30,7 +22,7 @@ const Dialogs = (props) => {
 				<div className={styles.messages}>
 					{messagesItem}
 				</div>
-				<NewPost placeholder={"Your message..."}/>
+				<NewMessage addMessage={props.addMessage}/>
 			</div>
 		</div>
 	)

@@ -1,10 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './my.css';
-import state from './state/state';
+import state from './redux/state';
+import {renderEntireTree} from './render';
 
-ReactDOM.render(<App state={state}/>, document.getElementById('root'));
+renderEntireTree(state);
 
 registerServiceWorker();
