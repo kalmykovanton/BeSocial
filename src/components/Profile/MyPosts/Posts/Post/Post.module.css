@@ -4,6 +4,7 @@
     grid-column-gap: 15px;
     grid-template-rows: 1fr 20px;
     padding: 5px 10px 0 10px;
+    justify-self: start;
 }
 
 .avatar {

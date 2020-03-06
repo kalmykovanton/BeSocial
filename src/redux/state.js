@@ -22,7 +22,8 @@ let state = {
                 likesCounter: 60,
                 date: "ZZ.ZZ.ZZZZ CC:CC"
             }
-        ]
+        ],
+        newPostText: ''
     },
     dialogsPage: {
         messages: [
@@ -51,22 +52,28 @@ let state = {
     }
 }
 
-export const addPost = (text) => {
+export const addPost = () => {
 
     let date = new Date();
-    let dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}.${date.getMinutes()}`;
+    let dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
     state.profilePage.posts
         .push(
             {
                 id: state.profilePage.posts.length,
-                message: text,
+                message: state.profilePage.newPostText,
                 likesCounter: 0,
                 date: dateFormat
             }
         );
+    state.profilePage.newPostText = '';
     renderEntireTree(state);
 };
+
+export const updateNewPostText = (newText) => {;
+    state.profilePage.newPostText = newText;
+    renderEntireTree(state);
+}
 
 export const addMessage = (text) => {
     state.dialogsPage.messages

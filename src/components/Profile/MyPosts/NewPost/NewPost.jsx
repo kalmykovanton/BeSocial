@@ -3,29 +3,36 @@ import styles from './NewPost.module.css';
 
 const NewPost = (props) => {
 
-	let newPostElement = React.createRef();
+    let newPostElement = React.createRef();
 
-	const addPost = () => {
-		props.addPost(newPostElement.current.value);
-		newPostElement.current.value = '';
-	}
+    const addPost = () => {
+        props.addPost(props.newPostText);
+    }
 
-	const clearTextArea = () => {
-		newPostElement.current.value = '';
-	}
+    const clearTextArea = () => {
+        props.updateNewPostText('');
+    }
 
-	return (
-		<div className={styles.container}>
+    const changeText = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
+
+    return (
+        <div className={styles.container}>
 			<textarea ref={newPostElement} className={styles.text}
-			          placeholder={props.placeholder} ></textarea>
-			<div className={styles.buttons}>
-				<button onClick={ addPost }
-				        className={`${styles.button} ${styles.post}`}>Post</button>
-				<button onClick={ clearTextArea }
-				        className={`${styles.button} ${styles.clear}`}>Clear</button>
-			</div>
-		</div>
-	)
+                      placeholder={"what about you thinking?.."} onChange={changeText}
+                      value={props.newPostText}></textarea>
+            <div className={styles.buttons}>
+                <button onClick={addPost}
+                        className={`${styles.button} ${styles.post}`}>Post
+                </button>
+                <button onClick={clearTextArea}
+                        className={`${styles.button} ${styles.clear}`}>Clear
+                </button>
+            </div>
+        </div>
+    )
 };
 
 export default NewPost;
