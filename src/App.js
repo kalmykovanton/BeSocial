@@ -23,7 +23,8 @@ const App = (props) => {
 					<Route path={'/friends'} render={() =>
 						<Friends state={props.state.friendsPage}/>}/>
 					<Route path={'/dialogs'} render={() =>
-						<Dialogs state={props.state.dialogsPage} addMessage={props.addMessage}/>}/>
+						<Dialogs state={props.state.dialogsPage} addMessage={props.addMessage}
+								 updateNewMessageText={props.updateNewMessageText}/>}/>
 					<Route path={'/news'} component={News}/>
 					<Route path={'/music'} component={Music}/>
 					<Route path={'/settings'} component={Settings}/>

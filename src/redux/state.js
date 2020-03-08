@@ -33,6 +33,7 @@ let state = {
             {id: 4, message: "I'm fine))"},
             {id: 5, message: "Good Bye!"}
         ],
+        newMessageText: '',
         dialogs: [
             {id: 1, name: "Olechka"},
             {id: 2, name: "Arthur"},
@@ -70,7 +71,8 @@ export const addPost = () => {
     renderEntireTree(state);
 };
 
-export const updateNewPostText = (newText) => {;
+export const updateNewPostText = (newText) => {
+    ;
     state.profilePage.newPostText = newText;
     renderEntireTree(state);
 }
@@ -83,7 +85,14 @@ export const addMessage = (text) => {
                 message: text
             }
         );
+    state.dialogsPage.newMessageText = '';
     renderEntireTree(state);
 };
+
+export const updateNewMessageText = (newText) => {
+    ;
+    state.dialogsPage.newMessageText = newText;
+    renderEntireTree(state);
+}
 
 export default state;
