@@ -55,6 +55,9 @@ let state = {
 
 export const addPost = () => {
 
+    if (!state.profilePage.newPostText)
+        return;
+
     let date = new Date();
     let dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
@@ -72,12 +75,13 @@ export const addPost = () => {
 };
 
 export const updateNewPostText = (newText) => {
-    ;
     state.profilePage.newPostText = newText;
     renderEntireTree(state);
 }
 
 export const addMessage = (text) => {
+    if (!state.dialogsPage.newMessageText)
+        return;
     state.dialogsPage.messages
         .push(
             {
@@ -90,7 +94,6 @@ export const addMessage = (text) => {
 };
 
 export const updateNewMessageText = (newText) => {
-    ;
     state.dialogsPage.newMessageText = newText;
     renderEntireTree(state);
 }
