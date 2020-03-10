@@ -119,7 +119,7 @@ let store = {
                 break;
         }
     }
-};git
+};
 
 export default store;
 
