@@ -1,16 +1,18 @@
 import React from 'react';
 import styles from './NewPost.module.css';
+import {addPostActionCreator, updateNewPostTextActionCreator}
+    from './../../../../redux/state';
 
 const NewPost = (props) => {
 
     let newPostElement = React.createRef();
 
     const addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
 
     const clearTextArea = () => {
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: ''});
+        props.dispatch(updateNewPostTextActionCreator(''));
     }
 
     const pressEnter = (event) => {
@@ -21,7 +23,7 @@ const NewPost = (props) => {
 
     const changeText = () => {
         let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (

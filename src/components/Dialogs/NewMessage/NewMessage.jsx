@@ -1,21 +1,23 @@
 import React from 'react';
 import styles from './../../Profile/MyPosts/NewPost/NewPost.module.css';
+import {addMessageActionCreator, updateNewMessageTextActionCreator}
+    from './../../../redux/state';
 
 const NewMessage = (props) => {
 
     let newMessageElement = React.createRef();
 
     const addMessage = () => {
-        props.dispatch({type: 'ADD-MESSAGE'});
+        props.dispatch(addMessageActionCreator());
     }
 
     const clearTextArea = () => {
-        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: ''});
+        props.dispatch(updateNewMessageTextActionCreator(''));
     }
 
     const changeText = () => {
         let text = newMessageElement.current.value;
-            props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
+        props.dispatch(updateNewMessageTextActionCreator(text));
     }
 
     const pressEnter = (event) => {
@@ -30,10 +32,12 @@ const NewMessage = (props) => {
                       placeholder={"Your message..."} onChange={changeText}
                       value={props.newMessageText} onKeyPress={pressEnter}></textarea>
             <div className={styles.buttons}>
-                <button onClick={ addMessage }
-                        className={`${styles.button} ${styles.post}`}>Send</button>
-                <button onClick={ clearTextArea }
-                        className={`${styles.button} ${styles.clear}`}>Clear</button>
+                <button onClick={addMessage}
+                        className={`${styles.button} ${styles.post}`}>Send
+                </button>
+                <button onClick={clearTextArea}
+                        className={`${styles.button} ${styles.clear}`}>Clear
+                </button>
             </div>
         </div>
     )
