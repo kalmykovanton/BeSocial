@@ -6,11 +6,11 @@ const NewPost = (props) => {
     let newPostElement = React.createRef();
 
     const addPost = () => {
-        props.addPost(props.newPostText);
+        props.dispatch({type: 'ADD-POST'});
     }
 
     const clearTextArea = () => {
-        props.updateNewPostText('');
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: ''});
     }
 
     const pressEnter = (event) => {
@@ -21,7 +21,7 @@ const NewPost = (props) => {
 
     const changeText = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
     }
 
     return (

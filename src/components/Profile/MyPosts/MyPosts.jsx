@@ -7,8 +7,7 @@ const MyPosts = (props) => {
 	return (
 		<div className={styles.container}/* posts={props.posts}*/>
 			<h3>My Posts</h3>
-			<NewPost addPost={props.addPost} updateNewPostText={props.updateNewPostText}
-					 newPostText={props.state.newPostText}/>
+			<NewPost dispatch={props.dispatch} newPostText={props.state.newPostText}/>
 			<Posts state={props.state.posts}/>
 		</div>
 	)

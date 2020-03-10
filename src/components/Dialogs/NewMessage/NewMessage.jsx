@@ -6,16 +6,16 @@ const NewMessage = (props) => {
     let newMessageElement = React.createRef();
 
     const addMessage = () => {
-        props.addMessage(props.newMessageText);
+        props.dispatch({type: 'ADD-MESSAGE'});
     }
 
     const clearTextArea = () => {
-        props.updateNewMessageText('');
+        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: ''});
     }
 
     const changeText = () => {
         let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+            props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
     }
 
     const pressEnter = (event) => {
