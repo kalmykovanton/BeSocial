@@ -1,4 +1,6 @@
-const friendsReduser = (state, action) => {
+let initialState = {};
+
+const friendsReduser = (state = initialState, action) => {
 
     return state;
 }
