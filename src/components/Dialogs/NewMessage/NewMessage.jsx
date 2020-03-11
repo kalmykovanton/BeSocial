@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './../../Profile/MyPosts/NewPost/NewPost.module.css';
 import {addMessageActionCreator, updateNewMessageTextActionCreator}
-    from './../../../redux/state';
+    from './../../../redux/DialogsReducer';
 
 const NewMessage = (props) => {
 
