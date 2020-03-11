@@ -5,7 +5,7 @@ import NewPost from "./NewPost/NewPost";
 
 const MyPosts = (props) => {
 	return (
-		<div className={styles.container}/* posts={props.posts}*/>
+		<div className={styles.container}>
 			<h3>My Posts</h3>
 			<NewPost dispatch={props.dispatch} newPostText={props.state.newPostText}/>
 			<Posts state={props.state.posts}/>

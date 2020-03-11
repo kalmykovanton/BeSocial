@@ -1,5 +1,5 @@
 import registerServiceWorker from './registerServiceWorker';
-import store from './redux/state';
+import store from './redux/ReduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from "react-router-dom";
@@ -16,6 +16,9 @@ export const renderEntireTree = (state) => {
 
 renderEntireTree(store.getState());
 
-store.subscribe(renderEntireTree);
+store.subscribe(() => {
+    let state = store.getState()
+        renderEntireTree(state);
+});
 
 registerServiceWorker();
