@@ -1,3 +1,7 @@
+import profileReducer from './ProfileReducer';
+import dialogsReducer from './DialogsReducer';
+import friendsReducer from './FriendsReduser';
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_MESSAGE = 'ADD-MESSAGE';
@@ -65,72 +69,25 @@ let store = {
         this._callSubscriber = observer;
     },
 
-    _addPost() {
-
-        if (!this._state.profilePage.newPostText)
-            return;
-
-        let date = new Date();
-        let dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
-
-        this._state.profilePage.posts
-            .push(
-                {
-                    id: this._state.profilePage.posts.length,
-                    message: this._state.profilePage.newPostText,
-                    likesCounter: 0,
-                    date: dateFormat
-                }
-            );
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    _addMessage() {
-        if (!this._state.dialogsPage.newMessageText)
-            return;
-        this._state.dialogsPage.messages
-            .push(
-                {
-                    id: this._state.dialogsPage.messages.length,
-                    message: this._state.dialogsPage.newMessageText
-                }
-            );
-        this._state.dialogsPage.newMessageText = '';
-        this._callSubscriber(this._state);
-    },
-    _updateNewMessageText(newText) {
-        this._state.dialogsPage.newMessageText = newText;
-        this._callSubscriber(this._state);
-    },
-
     dispatch(action) {
-        switch (action.type) {
-            case ADD_POST:
-                this._addPost();
-                break;
-            case UPDATE_NEW_POST_TEXT:
-                this._updateNewPostText(action.newText);
-                break;
-            case ADD_MESSAGE:
-                this._addMessage();
-                break;
-            case UPDATE_NEW_MESSAGE_TEXT:
-                this._updateNewMessageText(action.newText);
-                break;
-        }
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.friendsPage = friendsReducer(this._state.friendsPage, action);
+
+        this._callSubscriber(this._state);
+
     }
 };
 
-export const addPostActionCreator = () => ({ type: ADD_POST });
+export const addPostActionCreator = () =>
+    ({ type: ADD_POST });
 
 export const updateNewPostTextActionCreator = (text) =>
     ({ type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+export const addMessageActionCreator = () =>
+    ({ type: ADD_MESSAGE });
 
 export const updateNewMessageTextActionCreator = (text) =>
     ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text});

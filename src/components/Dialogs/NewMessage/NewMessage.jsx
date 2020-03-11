@@ -5,8 +5,6 @@ import {addMessageActionCreator, updateNewMessageTextActionCreator}
 
 const NewMessage = (props) => {
 
-    let newMessageElement = React.createRef();
-
     const addMessage = () => {
         props.dispatch(addMessageActionCreator());
     }
@@ -15,8 +13,8 @@ const NewMessage = (props) => {
         props.dispatch(updateNewMessageTextActionCreator(''));
     }
 
-    const changeText = () => {
-        let text = newMessageElement.current.value;
+    const changeText = (event) => {
+        let text = event.target.value;
         props.dispatch(updateNewMessageTextActionCreator(text));
     }
 
@@ -28,9 +26,12 @@ const NewMessage = (props) => {
 
     return (
         <div className={styles.container}>
-			<textarea ref={newMessageElement} className={styles.text}
-                      placeholder={"Your message..."} onChange={changeText}
-                      value={props.newMessageText} onKeyPress={pressEnter}></textarea>
+			<textarea className={styles.text}
+                      placeholder={"Your message..."}
+                      onChange={changeText}
+                      value={props.newMessageText}
+                      onKeyPress={pressEnter}>
+            </textarea>
             <div className={styles.buttons}>
                 <button onClick={addMessage}
                         className={`${styles.button} ${styles.post}`}>Send

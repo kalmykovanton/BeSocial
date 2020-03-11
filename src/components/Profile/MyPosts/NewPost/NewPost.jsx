@@ -5,8 +5,6 @@ import {addPostActionCreator, updateNewPostTextActionCreator}
 
 const NewPost = (props) => {
 
-    let newPostElement = React.createRef();
-
     const addPost = () => {
         props.dispatch(addPostActionCreator());
     }
@@ -21,16 +19,18 @@ const NewPost = (props) => {
         }
     }
 
-    const changeText = () => {
-        let text = newPostElement.current.value;
+    const changeText = (event) => {
+        let text = event.target.value;
         props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
         <div className={styles.container}>
-			<textarea ref={newPostElement} className={styles.text}
-                      placeholder={"what about you thinking?.."} onKeyPress={pressEnter}
-                      onChange={changeText} value={props.newPostText}></textarea>
+			<textarea className={styles.text}
+                      placeholder={"what about you thinking?.."}
+                      onKeyPress={pressEnter}
+                      onChange={changeText}
+                      value={props.newPostText}></textarea>
             <div className={styles.buttons}>
                 <button onClick={addPost}
                         className={`${styles.button} ${styles.post}`}>Post
