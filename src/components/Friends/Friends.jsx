@@ -4,7 +4,7 @@ import Friend from './Friend/Friend';
 
 const Friends = (props) => {
 
-	let friendsItem = props.state.friends
+	let friendsItem = props.store.getState().friendsPage.friends
 		.map( friend => <Friend name={friend.name}
 								img={friend.img}
 								id={friend.id}/>);
