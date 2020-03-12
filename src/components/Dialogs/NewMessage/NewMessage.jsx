@@ -1,26 +1,24 @@
 import React from 'react';
 import styles from './../../Profile/MyPosts/NewPost/NewPost.module.css';
-import {addMessageActionCreator, updateNewMessageTextActionCreator}
-    from './../../../redux/DialogsReducer';
 
 const NewMessage = (props) => {
 
     const addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.addMessage();
     }
 
     const clearTextArea = () => {
-        props.dispatch(updateNewMessageTextActionCreator(''));
+        props.clearTextArea('');
     }
 
     const changeText = (event) => {
         let text = event.target.value;
-        props.dispatch(updateNewMessageTextActionCreator(text));
+        props.changeText(text);
     }
 
     const pressEnter = (event) => {
         if (event.key == "Enter") {
-            addMessage();
+            props.addMessage();
         }
     }
 

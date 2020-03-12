@@ -3,14 +3,16 @@ import styles from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import Friend from './../Friends/Friend/Friend';
-import NewMessage from './NewMessage/NewMessage';
+import NewMessageContainer from './NewMessage/NewMessageContainer';
 
 const Dialogs = (props) => {
 
-	let dialogsItem = props.state.dialogs
+	let state = props.store.getState().dialogsPage;
+
+	let dialogsItem = state.dialogs
 		.map( dialog => <DialogItem id={dialog.id} name={dialog.name}/> );
 
-	let messagesItem = props.state.messages
+	let messagesItem = state.messages
 		.map( message => <Message id={message.id} message={message.message}/> );
 
 	return (
@@ -22,7 +24,7 @@ const Dialogs = (props) => {
 				<div className={styles.messages}>
 					{messagesItem}
 				</div>
-				<NewMessage dispatch={props.dispatch} newMessageText={props.state.newMessageText}/>
+				<NewMessageContainer store={props.store}/>
 			</div>
 		</div>
 	)
