@@ -24,7 +24,7 @@ const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
             if (!state.newMessageText)
-                return;
+                return state;
             state.messages
                 .push(
                     {

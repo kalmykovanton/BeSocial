@@ -31,7 +31,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             if (!state.newPostText)
-                return;
+                return state;
 
             const date = new Date();
             const dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} 
