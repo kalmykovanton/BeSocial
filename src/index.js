@@ -7,21 +7,12 @@ import App from './App';
 import './my.css';
 import {Provider} from 'react-redux';
 
-export const renderEntireTree = (state) => {
-    ReactDOM.render(
+ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
                 <App />
             </Provider>
         </BrowserRouter>,
         document.getElementById('root'));
-};
-
-renderEntireTree(store.getState());
-
-store.subscribe(() => {
-    let state = store.getState()
-        renderEntireTree(state);
-});
 
 registerServiceWorker();

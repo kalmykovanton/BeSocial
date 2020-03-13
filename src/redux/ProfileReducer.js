@@ -37,20 +37,19 @@ const profileReducer = (state = initialState, action) => {
             const dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} 
             ${date.getHours()}:${date.getMinutes()}`;
 
-            state.posts
-                .push(
-                    {
-                        id: state.posts.length,
-                        message: state.newPostText,
-                        likesCounter: 0,
-                        date: dateFormat
-                    }
-                );
-            state.newPostText = '';
-            break;
+            return {
+                ...state,
+                posts: [...state.posts, { id: state.posts.length,
+                                        message: state.newPostText,
+                                        likesCounter: 0,
+                                        date: dateFormat}],
+                newPostText: ''
+            };
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            break;
+            return {
+                ...state,
+                newPostText: action.newText
+            };
         default:
             return state;
     }

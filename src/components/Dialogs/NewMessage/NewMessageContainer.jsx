@@ -17,9 +17,6 @@ const mapDispatchToProps = (dispatch) => {
         },
         changeText: (text) => {
             dispatch(updateNewMessageTextActionCreator(text));
-        },
-        clearTextArea: () => {
-            dispatch(updateNewMessageTextActionCreator(''));
         }
     }
 };
