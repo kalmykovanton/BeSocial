@@ -8,7 +8,7 @@ const NewMessage = (props) => {
     }
 
     const clearTextArea = () => {
-        props.clearTextArea('');
+        props.changeText('');
     }
 
     const changeText = (event) => {

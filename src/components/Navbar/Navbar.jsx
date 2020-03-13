@@ -8,6 +8,7 @@ const Navbar = (props) => {
 			<NavItem id={"/profile"} name={"Profile"}/>
 			<NavItem id={"/friends"} name={"Friends"}/>
 			<NavItem id={"/dialogs"} name={"Dialogs"}/>
+			<NavItem id={"/users"} name={"Users"}/>
 			<NavItem id={"/news"} name={"News"}/>
 			<NavItem id={"/music"} name={"Music"}/>
 			<NavItem id={"/settings"} name={"Settings"}/>

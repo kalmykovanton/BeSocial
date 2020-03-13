@@ -8,9 +8,9 @@ let initialState = {
     ]
 };
 
-const friendsReduser = (state = initialState, action) => {
+const friendsReducer = (state = initialState, action) => {
 
     return state;
 }
 
-export default friendsReduser;
+export default friendsReducer;

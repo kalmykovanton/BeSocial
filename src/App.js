@@ -3,10 +3,11 @@ import {Route} from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Friends from "./components/Friends/Friends";
+import FriendsContainer from "./components/Friends/FriendsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
-import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -17,12 +18,10 @@ const App = (props) => {
 				<Header/>
 				<Navbar/>
 				<div className={"app-wrapper-content"}>
-					<Route path={'/profile'} render={() =>
-						<Profile store={props.store} />}/>
-					<Route path={'/friends'} render={() =>
-						<Friends store={props.store}/>}/>
-					<Route path={'/dialogs'} render={() =>
-						<Dialogs store={props.store} />}/>
+					<Route path={'/profile'} render={() => <Profile />}/>
+					<Route path={'/friends'} render={() => <FriendsContainer />}/>
+					<Route path={'/dialogs'} render={() => <DialogsContainer />}/>
+					<Route path={'/users'} render={() => <UsersContainer />}/>
 					<Route path={'/news'} component={News}/>
 					<Route path={'/music'} component={Music}/>
 					<Route path={'/settings'} component={Settings}/>
