@@ -28,7 +28,7 @@ let initialState = {
         },
         {
             id: 3,
-            followed: true,
+            followed: false,
             fullName: "Artyom",
             photoUrl: "https://lh3.googleusercontent.com/proxy/DJv7vq_jYWBBJ6ZOLYPi86N0qfZ_WcWr-DrBY1_iDia_-JmUTDgIAO0rXUAW7QyFCQ7SGdEd5F8o6Qu9Dn7EKjk",
             status: "I am a boss",
@@ -69,8 +69,9 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map( user => {
-                    if (user.id === action.userId)
+                    if (user.id === action.userId) {
                         return {...user, followed: true}
+                    }
                     return user;
                 })
             };
@@ -78,8 +79,9 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map( user => {
-                    if (user.id === action.userId)
+                    if (user.id === action.userId) {
                         return {...user, followed: false}
+                    }
                     return user;
                 })
             };
@@ -88,15 +90,13 @@ const usersReducer = (state = initialState, action) => {
         default:
             return state;
     }
-
-    return state;
 }
 
 export const followAC = (userId) =>
-    ({ type: FOLLOW, userId });
+    ({ type: FOLLOW, userId: userId });
 
 export const unfollowAC = (userId) =>
-    ({ type: UNFOLLOW, userId });
+    ({ type: UNFOLLOW, userId: userId });
 
 export const setUserAC = (users) =>
     ({ type: SET_USERS, users });
