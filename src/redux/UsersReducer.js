@@ -3,7 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
+    users: [/*
         {
             id: 1,
             followed: true,
@@ -58,7 +58,7 @@ let initialState = {
                 city: "Kharkov",
                 country: "Ukrane"
             }
-        }
+        }*/
     ]
 }
 
