@@ -7,6 +7,49 @@
     align-content: start;
 }
 
+.paginator {
+    display: grid;
+    grid-template-columns: repeat(11, 40px);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    grid-column-gap: 5px;
+}
+
+.paginatorItems, .break {
+    display: grid;
+    height: 40px;
+    align-content: center;
+    justify-content: center;
+    font-size: 23px;
+    background-color: #ffefd5;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.next, .previous {
+    display: none;
+}
+
+.next:hover, .previous:hover,
+.paginatorItems:hover, .break:hover {
+    cursor: pointer;
+    color: #ff8b51;
+}
+
+.paginatorItems, .break {
+    width: 40px;
+}
+
+.paginatorItemsActive {
+    background-color: #ff8b51;
+    color: #ffefd5;
+}
+
+.paginatorItemsActive:hover {
+    color: #ffefd5;
+}
+/*
+
 .pagesSelector {
     height: 30px;
     text-align: center;
@@ -25,6 +68,7 @@
 .selectedPage {
     font-weight: bold;
 }
+*/
 
 .user {
     background-color: #ffefd5;

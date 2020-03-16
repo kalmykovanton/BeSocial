@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Users.module.css';
 import * as axios from 'axios';
 import userPhoto from './../../img/user1.png';
+import ReactPaginate from 'react-paginate';
 
 class Users extends React.Component {
 
@@ -10,14 +11,15 @@ class Users extends React.Component {
         &count=${this.props.pageSize}`)
             .then( response => {
                 this.props.setUsers(response.data.items);
-                if ( response.data.totalCount < 60 )
+                /*if ( response.data.totalCount < 60 )*/
                 this.props.setTotalUsersCount(response.data.totalCount);
-                else this.props.setTotalUsersCount(60);
+                /*else this.props.setTotalUsersCount(60);*/
             });
     }
 
-    setCurrentPage = (currentPage) => {
-    this.props.setCurrentPage(currentPage);
+    setCurrentPage = (data) => {
+        const currentPage = data.selected + 1;
+        this.props.setCurrentPage(currentPage);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}
         &count=${this.props.pageSize}`)
             .then( response => {
@@ -37,14 +39,25 @@ class Users extends React.Component {
 
         return (
             <div className={styles.container}>
-                <div className={styles.pagesSelector}>
+                <ReactPaginate pageCount={pageCount}
+                               pageRangeDisplayed={3}
+                               marginPagesDisplayed={2}
+                               pageClassName={styles.paginatorItems}
+                               activeClassName={styles.paginatorItemsActive} c
+                               containerClassName={styles.paginator}
+                               onPageChange={(data) => this.setCurrentPage(data)}
+                               breakLabel={'...'}
+                               nextClassName={styles.next}
+                               previousClassName={styles.previous}
+                               breakClassName={styles.break}/>
+                {/*{<div className={styles.pagesSelector}>
                     { pages.map( page => {
                         return <span className={this.props.currentPage === page && styles.selectedPage}
                         onClick={ () => this.setCurrentPage(page) }>{page}</span>
                     })}
-                </div>
+                </div>}*/}
                 {
-                    this.props.users.map(user => <div className={styles.user} key={user.id}>
+                     this.props.users.map(user => <div className={styles.user} key={user.id}>
                         <div className={styles.avatar}>
                             <div>
                                 <img className={styles.img}
