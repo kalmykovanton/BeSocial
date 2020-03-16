@@ -1,65 +1,14 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
 let initialState = {
-    users: [/*
-        {
-            id: 1,
-            followed: true,
-            fullName: "Olechka",
-            photoUrl: "https://lh3.googleusercontent.com/proxy/DJv7vq_jYWBBJ6ZOLYPi86N0qfZ_WcWr-DrBY1_iDia_-JmUTDgIAO0rXUAW7QyFCQ7SGdEd5F8o6Qu9Dn7EKjk",
-            status: "I am a pretty girl",
-            location: {
-                city: "Kharkov",
-                country: "Ukrane"
-            }
-        },
-        {
-            id: 2,
-            followed: true,
-            fullName: "Arthur",
-            photoUrl: "https://lh3.googleusercontent.com/proxy/DJv7vq_jYWBBJ6ZOLYPi86N0qfZ_WcWr-DrBY1_iDia_-JmUTDgIAO0rXUAW7QyFCQ7SGdEd5F8o6Qu9Dn7EKjk",
-            status: "I am a senior web developer",
-            location: {
-                city: "Kharkov",
-                country: "Ukrane"
-            }
-        },
-        {
-            id: 3,
-            followed: false,
-            fullName: "Artyom",
-            photoUrl: "https://lh3.googleusercontent.com/proxy/DJv7vq_jYWBBJ6ZOLYPi86N0qfZ_WcWr-DrBY1_iDia_-JmUTDgIAO0rXUAW7QyFCQ7SGdEd5F8o6Qu9Dn7EKjk",
-            status: "I am a boss",
-            location: {
-                city: "Severodonetsk",
-                country: "Ukrane"
-            }
-        },
-        {
-            id: 4,
-            followed: true,
-            fullName: "Ruslan",
-            photoUrl: "https://lh3.googleusercontent.com/proxy/DJv7vq_jYWBBJ6ZOLYPi86N0qfZ_WcWr-DrBY1_iDia_-JmUTDgIAO0rXUAW7QyFCQ7SGdEd5F8o6Qu9Dn7EKjk",
-            status: "I am a ABAP developer",
-            location: {
-                city: "Tver",
-                country: "Russia"
-            }
-        },
-        {
-            id: 5,
-            followed: true,
-            fullName: "Dima",
-            photoUrl: "https://lh3.googleusercontent.com/proxy/DJv7vq_jYWBBJ6ZOLYPi86N0qfZ_WcWr-DrBY1_iDia_-JmUTDgIAO0rXUAW7QyFCQ7SGdEd5F8o6Qu9Dn7EKjk",
-            status: "I am a sales manager",
-            location: {
-                city: "Kharkov",
-                country: "Ukrane"
-            }
-        }*/
-    ]
+    users: [],
+    totalUsersCount: 0,
+    currentPage: 1,
+    pageSize: 10
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -68,7 +17,7 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state,
-                users: state.users.map( user => {
+                users: state.users.map(user => {
                     if (user.id === action.userId) {
                         return {...user, followed: true}
                     }
@@ -78,7 +27,7 @@ const usersReducer = (state = initialState, action) => {
         case UNFOLLOW:
             return {
                 ...state,
-                users: state.users.map( user => {
+                users: state.users.map(user => {
                     if (user.id === action.userId) {
                         return {...user, followed: false}
                     }
@@ -86,19 +35,29 @@ const usersReducer = (state = initialState, action) => {
                 })
             };
         case SET_USERS:
-            return { ...state, users: [...state.users, ...action.users ]};
+            return {...state, users: action.users};
+        case SET_CURRENT_PAGE:
+            return {...state, currentPage: action.currentPage};
+        case SET_TOTAL_USERS_COUNT:
+            return {...state, totalUsersCount: action.totalCount};
         default:
             return state;
     }
 }
 
 export const followAC = (userId) =>
-    ({ type: FOLLOW, userId: userId });
+    ({type: FOLLOW, userId: userId});
 
 export const unfollowAC = (userId) =>
-    ({ type: UNFOLLOW, userId: userId });
+    ({type: UNFOLLOW, userId: userId});
 
 export const setUserAC = (users) =>
-    ({ type: SET_USERS, users });
+    ({type: SET_USERS, users});
+
+export const setCurrentPageAC = (currentPage) =>
+    ({type: SET_CURRENT_PAGE, currentPage});
+
+export const setTotalUsersCountAC = (totalCount) =>
+    ({type: SET_TOTAL_USERS_COUNT, totalCount});
 
 export default usersReducer;

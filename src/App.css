@@ -1,5 +1,5 @@
 .app-wrapper {
-    width: 1200px;
+    max-width: 1200px;
     height: 100vh;
     margin: 0 auto;
     font-family: Calibri, sans-serif;
