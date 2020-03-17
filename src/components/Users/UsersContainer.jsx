@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {followAC} from './../../redux/UsersReducer';
-import {unfollowAC} from './../../redux/UsersReducer';
-import {setUserAC} from './../../redux/UsersReducer';
-import {setCurrentPageAC} from './../../redux/UsersReducer';
-import {setTotalUsersCountAC} from './../../redux/UsersReducer';
+import {follow,
+        unfollow,
+        setUsers,
+        setCurrentPage,
+        setTotalUsersCount} from './../../redux/UsersReducer';
 import * as axios from 'axios';
 import Users from './Users';
 
@@ -49,26 +49,8 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId));
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId));
-        },
-        setUsers: (users) => {
-            dispatch(setUserAC(users));
-        },
-        setCurrentPage: (currentPage) => {
-            dispatch(setCurrentPageAC(currentPage));
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount));
-        }
-    }
-};
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainer);
+const UsersContainer = connect(mapStateToProps, {
+    follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount
+    })(UsersAPIContainer);
 
 export default UsersContainer;

@@ -8,7 +8,7 @@ const NewPost = (props) => {
     }
 
     const clearTextArea = () => {
-        props.changeText('');
+        props.updateNewPostText('');
     }
 
     const pressEnter = (event) => {
@@ -19,7 +19,7 @@ const NewPost = (props) => {
 
     const changeText = (event) => {
         let text = event.target.value;
-        props.changeText(text);
+        props.updateNewPostText(text);
     }
 
     return (

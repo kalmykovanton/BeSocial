@@ -8,12 +8,12 @@ const NewMessage = (props) => {
     }
 
     const clearTextArea = () => {
-        props.changeText('');
+        props.updateNewMessageText('');
     }
 
     const changeText = (event) => {
         let text = event.target.value;
-        props.changeText(text);
+        props.updateNewMessageText(text);
     }
 
     const pressEnter = (event) => {
