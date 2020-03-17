@@ -48,27 +48,6 @@
 .paginatorItemsActive:hover {
     color: #ffefd5;
 }
-/*
-
-.pagesSelector {
-    height: 30px;
-    text-align: center;
-}
-
-.pagesSelector span {
-    margin-right: 12px;
-    font-size: 22px;
-}
-
-.pagesSelector span:hover {
-    cursor: pointer;
-}
-
-
-.selectedPage {
-    font-weight: bold;
-}
-*/
 
 .user {
     background-color: #ffefd5;
