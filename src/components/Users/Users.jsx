@@ -2,6 +2,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import styles from './Users.module.css';
 import userPhoto from './../../img/user1.png';
+import Preloader from './../common/Preloader/Preloader';
 
 const Users = (props) => {
 
@@ -9,6 +10,7 @@ const Users = (props) => {
 
     return (
         <div className={styles.container}>
+            { props.isFatching ? <Preloader /> : null }
             <ReactPaginate pageCount={pageCount}
                            pageRangeDisplayed={3}
                            marginPagesDisplayed={2}

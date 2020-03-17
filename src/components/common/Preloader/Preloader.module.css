@@ -1,0 +1,9 @@
+.preloaderGif {
+    position: absolute;
+    display: block;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
