@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import styles from './Users.module.css';
 import userPhoto from './../../img/user1.png';
 import Preloader from './../common/Preloader/Preloader';
+import {NavLink} from 'react-router-dom';
 
 const Users = (props) => {
 
@@ -27,8 +28,10 @@ const Users = (props) => {
                 props.users.map(user => <div className={styles.user} key={user.id}>
                     <div className={styles.avatar}>
                         <div>
-                            <img className={styles.img}
-                                 src={ user.photos.small ? user.photos.small : userPhoto } alt="ava"/>
+                            <NavLink to={`/profile/${user.id}`}>
+                                <img className={styles.img}
+                                     src={ user.photos.small ? user.photos.small : userPhoto } alt="ava"/>
+                            </NavLink>
                         </div>
                         <div>
                             { user.followed
@@ -39,9 +42,11 @@ const Users = (props) => {
                         </div>
                     </div>
                     <div className={styles.info}>
-                        <div className={styles.name}>
-                            {user.name}
-                        </div>
+                        <NavLink to={`/profile/${user.id}`} className={styles.name}>
+                            <div className={styles.name}>
+                                {user.name}
+                            </div>
+                        </NavLink>
                         <div>
                             {user.status}
                         </div>

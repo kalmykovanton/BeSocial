@@ -74,6 +74,10 @@
     justify-self: center;
 }
 
+.img:hover {
+    transform: scale(1.2);
+}
+
 .followButton {
     border-radius: 10px;
     background-color: #ffd199;
@@ -87,6 +91,13 @@
 .name {
     font-weight: bold;
     font-size: 22px;
+    color: #222222;
+    text-decoration: none;
+}
+
+.name:hover {
+    font-size: 23px;
+    color: #888888;
 }
 
 .location {

@@ -8,16 +8,19 @@
 .avatar {
     height: 200px;
     width: 200px;
-    background-image: url("../../../img/ava_kot.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% ;
     border-radius: 10px;
 }
 
 .description {
     border-radius: 10px;
-    background-color: papayawhip;
+    background-color: #ffefd5;
     padding: 5px;
+}
+
+.fullName {
+    font-size: 22px;
+    color: #222222;
+    font-weight: bold;
 }
 
 @media (max-width: 359px) {
