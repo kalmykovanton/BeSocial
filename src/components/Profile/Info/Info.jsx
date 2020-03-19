@@ -4,10 +4,9 @@ import Preloader from './../../common/Preloader/Preloader';
 
 const Info = (props) => {
 	if (!props.profile) {
-		return (
-			<Preloader />
-		)
+		return <Preloader />
 	}
+
 	return (
 		<div className={styles.container}>
 			<div>
