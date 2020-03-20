@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Info.module.css';
 import Preloader from './../../common/Preloader/Preloader';
+import defaultImage from './../../../img/user1.png';
 
 const Info = (props) => {
 	if (!props.profile) {
@@ -10,7 +11,11 @@ const Info = (props) => {
 	return (
 		<div className={styles.container}>
 			<div>
-				<img className={styles.avatar} src={props.profile.data.photos.large} alt="Ava"/>
+				{
+					(!props.profile.data.photos.large) ?
+					<img className={styles.avatar} src={defaultImage} alt="Ava"/>
+					: <img className={styles.avatar} src={props.profile.data.photos.large} alt="Ava"/>
+				}
 			</div>
 			<div className={styles.description}>
 				<div className={styles.fullName}>{props.profile.data.fullName}</div>

@@ -6,15 +6,15 @@ import { follow,
          setCurrentPage,
          setTotalUsersCount,
          toggleIsFatching } from './../../redux/UsersReducer';
-import * as axios from 'axios';
 import Users from './Users';
+import * as axios from 'axios';
 
 class UsersAPIContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFatching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}
-        &count=${this.props.pageSize}`)
+        &count=${this.props.pageSize}`, { withCredentials: true })
             .then( response => {
                 this.props.toggleIsFatching(false);
                 this.props.setUsers(response.data.items);
@@ -27,7 +27,7 @@ class UsersAPIContainer extends React.Component {
         this.props.setCurrentPage(currentPage);
         this.props.toggleIsFatching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}
-        &count=${this.props.pageSize}`)
+        &count=${this.props.pageSize}`, { withCredentials: true })
             .then( response => {
                 this.props.toggleIsFatching(false);
                 this.props.setUsers(response.data.items);
