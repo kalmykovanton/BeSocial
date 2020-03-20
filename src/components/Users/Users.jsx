@@ -5,6 +5,7 @@ import userPhoto from './../../img/user1.png';
 import Preloader from './../common/Preloader/Preloader';
 import {NavLink} from 'react-router-dom';
 import * as axios from 'axios';
+import {userAPI} from './../../api/api';
 
 const Users = (props) => {
 
@@ -37,23 +38,17 @@ const Users = (props) => {
                         <div>
                             { user.followed
                                 ? <button onClick={ () => {
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,
-                                        { withCredentials: true,
-                                        headers: {"API-KEY": "72504f2d-c808-4763-827c-9710053e4d15" }
-                                        })
-                                        .then( response => {
-                                            if (response.data.resultCode == 0) {
+                                    userAPI.unfollowUser(user.id)
+                                        .then( data => {
+                                            if (data.resultCode == 0) {
                                             props.unfollow(user.id)
                                         }
                                     });
                                 } } className={styles.followButton}>Unfollow</button>
                                 : <button onClick={ () => {
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,
-                                        {}, { withCredentials: true,
-                                            headers: {"API-KEY": "72504f2d-c808-4763-827c-9710053e4d15" }
-                                            })
-                                        .then(response => {
-                                        if (response.data.resultCode == 0) {
+                                    userAPI.followUser(user.id)
+                                        .then(data => {
+                                        if (data.resultCode == 0) {
                                             props.follow(user.id)
                                         }
                                     });
