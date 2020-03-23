@@ -4,8 +4,6 @@ import styles from './Users.module.css';
 import userPhoto from './../../img/user1.png';
 import Preloader from './../common/Preloader/Preloader';
 import {NavLink} from 'react-router-dom';
-import * as axios from 'axios';
-import {userAPI} from './../../api/api';
 
 const Users = (props) => {
 

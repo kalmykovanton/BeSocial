@@ -5,8 +5,6 @@ import { follow,
          setCurrentPage,
          getUsers } from './../../redux/UsersReducer';
 import Users from './Users';
-import {userAPI} from './../../api/api';
-import {toggleIsFollowing} from './../../redux/UsersReducer';
 
 class UsersAPIContainer extends React.Component {
 
@@ -45,7 +43,6 @@ const mapStateToProps = (state) => {
 };
 
 const UsersContainer = connect(mapStateToProps, {
-    follow, unfollow, setCurrentPage,
-    toggleIsFollowing, getUsers })(UsersAPIContainer);
+    follow, unfollow, setCurrentPage,getUsers })(UsersAPIContainer);
 
 export default UsersContainer;
