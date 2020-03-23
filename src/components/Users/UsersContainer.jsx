@@ -2,10 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { follow,
          unfollow,
-         setUsers,
          setCurrentPage,
-         setTotalUsersCount,
-         toggleIsFatching } from './../../redux/UsersReducer';
+         getUsers } from './../../redux/UsersReducer';
 import Users from './Users';
 import {userAPI} from './../../api/api';
 import {toggleIsFollowing} from './../../redux/UsersReducer';
@@ -13,25 +11,13 @@ import {toggleIsFollowing} from './../../redux/UsersReducer';
 class UsersAPIContainer extends React.Component {
 
     componentDidMount() {
-        this.props.toggleIsFatching(true);
-
-        userAPI.getUsers(this.props.currentPage, this.props.pageSize).then( data => {
-            this.props.toggleIsFatching(false);
-            this.props.setUsers(data.items);
-            this.props.setTotalUsersCount(data.totalCount);
-        });
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
     setCurrentPage = (data) => {
         const currentPage = data.selected + 1;
-
         this.props.setCurrentPage(currentPage);
-        this.props.toggleIsFatching(true);
-
-        userAPI.getUsers(currentPage, this.props.pageSize).then( data => {
-            this.props.toggleIsFatching(false);
-            this.props.setUsers(data.items);
-        });
+        this.props.getUsers(currentPage, this.props.pageSize);
     }
 
     render() {
@@ -43,8 +29,7 @@ class UsersAPIContainer extends React.Component {
                         unfollow={this.props.unfollow}
                         isFatching={this.props.isFatching}
                         isFollowingInProgress={this.props.isFollowingInProgress}
-                        toggleIsFollowing={this.props.toggleIsFollowing}
-        />);
+                 />);
     }
 }
 
@@ -60,8 +45,7 @@ const mapStateToProps = (state) => {
 };
 
 const UsersContainer = connect(mapStateToProps, {
-    follow, unfollow, setUsers, setCurrentPage,
-    setTotalUsersCount, toggleIsFatching,
-    toggleIsFollowing })(UsersAPIContainer);
+    follow, unfollow, setCurrentPage,
+    toggleIsFollowing, getUsers })(UsersAPIContainer);
 
 export default UsersContainer;

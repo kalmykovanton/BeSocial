@@ -38,27 +38,11 @@ const Users = (props) => {
                         <div>
                             { user.followed
                                 ? <button disabled={props.isFollowingInProgress.some(id => id === user.id)}
-                                          onClick={ () => {
-                                            props.toggleIsFollowing(true, user.id);
-                                            userAPI.unfollowUser(user.id)
-                                                .then( data => {
-                                                    if (data.resultCode == 0) {
-                                                    props.unfollow(user.id)
-                                                }
-                                                    props.toggleIsFollowing(false, user.id);
-                                            });
-                                } } className={styles.followButton}>Unfollow</button>
+                                          onClick={ () => { props.unfollow(user.id) } }
+                                          className={styles.followButton}>Unfollow</button>
                                 : <button disabled={props.isFollowingInProgress.some(id => id === user.id)}
-                                          onClick={ () => {
-                                            props.toggleIsFollowing(true, user.id);
-                                            userAPI.followUser(user.id)
-                                                .then(data => {
-                                                if (data.resultCode == 0) {
-                                                    props.follow(user.id)
-                                                }
-                                                    props.toggleIsFollowing(false, user.id);
-                                            });
-                                } } className={styles.followButton}>Follow</button>}
+                                          onClick={ () => { props.follow(user.id) } }
+                                          className={styles.followButton}>Follow</button> }
                         </div>
                     </div>
                     <div className={styles.info}>
