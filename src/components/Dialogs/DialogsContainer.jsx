@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
 
 	return {
 		dialogsItem: dialogsItem,
-		messagesItem: messagesItem
+		messagesItem: messagesItem,
+		isAuth: state.auth.isAuth
 	}
 };
 
