@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Info.module.css';
 import Preloader from './../../common/Preloader/Preloader';
 import defaultImage from './../../../img/user1.png';
+import ProfileStatus from './ProfileStatus.jsx';
 
 const Info = (props) => {
 	if (!props.profile) {
@@ -20,7 +21,9 @@ const Info = (props) => {
 			<div className={styles.description}>
 				<div className={styles.fullName}>{props.profile.data.fullName}</div>
 				<div>{props.profile.data.aboutMe}</div>
-				<div></div>
+				<div>
+					<ProfileStatus status={'I am cool man!!!'}/>
+				</div>
 			</div>
 		</div>
 	)
