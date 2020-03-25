@@ -4,11 +4,8 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import Friend from './../Friends/Friend/Friend';
 import NewMessageContainer from './NewMessage/NewMessageContainer';
-import {Redirect} from 'react-router-dom';
 
 const Dialogs = (props) => {
-
-	if (!props.isAuth) return <Redirect to={'/login'}/>
 
 return (
 		<div className={styles.container}>

@@ -1,10 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { follow,
-         unfollow,
-         setCurrentPage,
-         getUsers } from './../../redux/UsersReducer';
+import {
+    follow,
+    unfollow,
+    setCurrentPage,
+    getUsers
+} from './../../redux/UsersReducer';
 import Users from './Users';
+import {compose} from 'redux';
+import {withAuthRedirect} from './../hoc/withAuthRedirect.jsx';
 
 class UsersAPIContainer extends React.Component {
 
@@ -19,15 +23,15 @@ class UsersAPIContainer extends React.Component {
     }
 
     render() {
-        return  (<Users setCurrentPage={this.setCurrentPage}
-                        totalUsersCount={this.props.totalUsersCount}
-                        pageSize={this.props.pageSize}
-                        users={this.props.users}
-                        follow={this.props.follow}
-                        unfollow={this.props.unfollow}
-                        isFatching={this.props.isFatching}
-                        isFollowingInProgress={this.props.isFollowingInProgress}
-                 />);
+        return (<Users setCurrentPage={this.setCurrentPage}
+                       totalUsersCount={this.props.totalUsersCount}
+                       pageSize={this.props.pageSize}
+                       users={this.props.users}
+                       follow={this.props.follow}
+                       unfollow={this.props.unfollow}
+                       isFatching={this.props.isFatching}
+                       isFollowingInProgress={this.props.isFollowingInProgress}
+        />);
     }
 }
 
@@ -42,7 +46,10 @@ const mapStateToProps = (state) => {
     }
 };
 
-const UsersContainer = connect(mapStateToProps, {
-    follow, unfollow, setCurrentPage,getUsers })(UsersAPIContainer);
+/*const UsersContainer = connect(mapStateToProps, {
+    follow, unfollow, setCurrentPage,getUsers })(UsersAPIContainer);*/
 
-export default UsersContainer;
+export default compose(withAuthRedirect,
+    connect(mapStateToProps, {
+        follow, unfollow, setCurrentPage, getUsers
+    }))(UsersAPIContainer);
