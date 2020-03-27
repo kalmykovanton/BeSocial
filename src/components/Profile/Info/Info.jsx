@@ -13,16 +13,16 @@ const Info = (props) => {
 		<div className={styles.container}>
 			<div>
 				{
-					(!props.profile.data.photos.large) ?
+					(!props.profile.photos.large) ?
 					<img className={styles.avatar} src={defaultImage} alt="Ava"/>
-					: <img className={styles.avatar} src={props.profile.data.photos.large} alt="Ava"/>
+					: <img className={styles.avatar} src={props.profile.photos.large} alt="Ava"/>
 				}
 			</div>
 			<div className={styles.description}>
-				<div className={styles.fullName}>{props.profile.data.fullName}</div>
-				<div>{props.profile.data.aboutMe}</div>
-				<div>
-					<ProfileStatus status={'I am cool man!!!'}/>
+				<div className={styles.fullName}>{props.profile.fullName}</div>
+				<div>{props.profile.aboutMe}</div>
+				<div className={styles.statusContainer}>
+					<ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
 				</div>
 			</div>
 		</div>

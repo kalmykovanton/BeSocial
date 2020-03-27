@@ -15,10 +15,12 @@
     border-radius: 10px;
     background-color: #ffefd5;
     padding: 5px;
+    display: grid;
+    align-content: start;
 }
 
 .fullName {
-    font-size: 22px;
+    font-size: 24px;
     color: #222222;
     font-weight: bold;
 }
@@ -28,4 +30,10 @@
         grid-template-columns: 1fr;
         justify-items: center;
     }
+}
+
+.statusContainer {
+    display: grid;
+    justify-self: start;
+    font-size: 18px;
 }
