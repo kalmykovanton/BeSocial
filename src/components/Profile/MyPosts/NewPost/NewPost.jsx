@@ -1,44 +1,39 @@
 import React from 'react';
 import styles from './NewPost.module.css';
+import {Field, reduxForm} from 'redux-form';
 
 const NewPost = (props) => {
 
-    const addPost = () => {
-        props.addPost();
-    }
-
-    const clearTextArea = () => {
-        props.updateNewPostText('');
-    }
-
-    const pressEnter = (event) => {
-        if (event.key === "Enter") {
-            props.addPost();
-        }
-    }
-
-    const changeText = (event) => {
-        let text = event.target.value;
-        props.updateNewPostText(text);
-    }
+    const addPost = (values) => {
+        props.addPost(values.newPostText);
+    };
 
     return (
         <div className={styles.container}>
-			<textarea className={styles.text}
-                      placeholder={"write your post..."}
-                      onKeyPress={pressEnter}
-                      onChange={changeText}
-                      value={props.value}></textarea>
-            <div className={styles.buttons}>
-                <button onClick={addPost}
-                        className={`${styles.button} ${styles.post}`}>Post
-                </button>
-                <button onClick={clearTextArea}
-                        className={`${styles.button} ${styles.clear}`}>Clear
-                </button>
-            </div>
+			<NewPostFormRedux onSubmit={addPost} />
         </div>
     )
 };
+
+const NewPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+			<Field className={styles.text}
+                   component={"textarea"}
+                    placeholder={"write your post..."}
+                    name={"newPostText"}/>
+            <div className={styles.buttons}>
+                <button className={`${styles.button} ${styles.post}`}> Post </button>
+                {/*<button onClick={clearTextArea}
+                        className={`${styles.button} ${styles.clear}`}>Clear
+                </button>*/}
+            </div>
+        </form>
+    )
+};
+
+const NewPostFormRedux = reduxForm({
+    form: "profileNewPostForm"
+})(NewPostForm);
 
 export default NewPost;

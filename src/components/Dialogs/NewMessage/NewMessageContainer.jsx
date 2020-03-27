@@ -1,15 +1,14 @@
 import React from 'react';
-import {addMessage, updateNewMessageText}
-    from './../../../redux/DialogsReducer';
+import {addMessage} from './../../../redux/DialogsReducer';
 import NewMessage from './NewMessage';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
-        newMessageText: state.dialogsPage.newMessageText
+
     }
 };
 
-const NewMessageContainer = connect(mapStateToProps, {addMessage, updateNewMessageText})(NewMessage);
+const NewMessageContainer = connect(mapStateToProps, {addMessage})(NewMessage);
 
 export default NewMessageContainer;

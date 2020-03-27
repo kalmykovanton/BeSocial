@@ -1,7 +1,6 @@
 import {profileAPI} from "./../api/api";
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
 
@@ -27,7 +26,6 @@ let initialState = {
             date: "ZZ.ZZ.ZZZZ CC:CC"
         }
     ],
-    newPostText: '',
     profile: null,
     status: ''
 };
@@ -37,7 +35,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case ADD_POST:
-            if (!state.newPostText)
+            if (!action.newPostText)
                 return state;
             const date = new Date();
             const dateFormat = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} 
@@ -46,15 +44,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 posts: [...state.posts, {
                     id: state.posts.length,
-                    message: state.newPostText,
+                    message: action.newPostText,
                     likesCounter: 0,
                     date: dateFormat
-                }],
-                newPostText: ''
+                }]
             };
-
-        case UPDATE_NEW_POST_TEXT:
-            return {...state, newPostText: action.newText};
 
         case SET_USER_PROFILE:
             return {...state, profile: action.profile};
@@ -67,11 +61,8 @@ const profileReducer = (state = initialState, action) => {
     }
 };
 
-export const addPost = () =>
-    ({type: ADD_POST});
-
-export const updateNewPostText = (newText) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText});
+export const addPost = (newPostText) =>
+    ({type: ADD_POST, newPostText});
 
 export const setUserProfile = (profile) =>
     ({type: SET_USER_PROFILE, profile});
