@@ -10,10 +10,13 @@ const Header = (props) => {
 				<img src={logo} alt="Logo"/>
 			</div>
 			<h1>BeSocial!</h1>
-			<div className={styles.login}>
-				{ props.isAuth ? <NavLink className={styles.loginLink} to={`/profile/${props.id}`}>{props.login}</NavLink>
-					: <NavLink to={'/login'} className={styles.loginLink} pathName>Login</NavLink> }
-			</div>
+			{ props.isAuth ? <div className={styles.login}>
+								<NavLink className={styles.loginLink} to={`/profile/${props.id}`}>
+									{props.login}
+								</NavLink>
+								<button onClick={props.logout} className={styles.logout}>Logout</button>
+							</div>
+				: <NavLink to={'/login'} className={styles.loginLink} pathName>Login</NavLink> }
 		</header>
 	)
 };
