@@ -1,4 +1,6 @@
 import React from 'react';
+import {required} from "../../utils/validators/validators";
+import {Input} from "../common/FormsControls/FormsControls";
 import styles from './Login.module.css';
 import {Field, reduxForm} from 'redux-form';
 
@@ -6,15 +8,17 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field className={styles.textInput} component={'input'}
-                       name={'login'} placeholder={'login'}/>
+                <Field className={styles.textInput} component={Input}
+                       name={'login'} placeholder={'login'}
+                       validate={[required]}/>
             </div>
             <div>
-                <Field className={styles.textInput} component={'input'}
-                       name={'password'} placeholder={'password'}/>
+                <Field className={styles.textInput} component={Input}
+                       name={'password'} placeholder={'password'}
+                       validate={[required]}/>
             </div>
             <div className={styles.checkbox} >
-                <Field className={styles.checkbox} component={'input'}
+                <Field className={styles.checkbox} component={Input}
                        type="checkbox" name={'rememberMe'}/> <span>remember me</span>
             </div>
             <div className={styles.buttonContainer}>
