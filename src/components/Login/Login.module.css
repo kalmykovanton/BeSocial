@@ -55,3 +55,8 @@
     height: 45px;
     width: 100px;
 }
+
+.errorMessage {
+    color:red;
+    font-weight: bold;
+}

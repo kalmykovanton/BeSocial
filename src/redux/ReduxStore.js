@@ -1,4 +1,5 @@
 import {combineReducers, createStore, applyMiddleware} from "redux";
+import appReducer from "./AppReducer";
 import profileReducer from './ProfileReducer';
 import dialogsReducer from './DialogsReducer';
 import friendsReducer from './FriendsReducer';
@@ -14,7 +15,8 @@ let reducers = combineReducers({
     friendsPage: friendsReducer,
     usersPage: usersReducer,
     auth: authReduser,
-    form: formReducer
+    form: formReducer,
+    app: appReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
