@@ -11,7 +11,7 @@ const Users = (props) => {
 
     return (
         <div className={styles.container}>
-            { props.isFatching ? <Preloader /> : null }
+            { props.isFetching ? <Preloader /> : null }
             <ReactPaginate pageCount={pageCount}
                            pageRangeDisplayed={3}
                            marginPagesDisplayed={2}

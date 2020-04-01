@@ -13,7 +13,7 @@ let initialState = {
     totalUsersCount: 0,
     currentPage: 1,
     pageSize: 10,
-    isFatching: false,
+    isFetching: false,
     isFollowingInProgress: []
 }
 
@@ -47,7 +47,7 @@ const usersReducer = (state = initialState, action) => {
         case SET_TOTAL_USERS_COUNT:
             return {...state, totalUsersCount: action.totalCount};
         case TOGGLE_IS_FATCHING:
-            return {...state, isFatching: action.isFatching};
+            return {...state, isFetching: action.isFetching};
         case TOGGLE_IS_FOLLOWING:
             return {...state,
                     isFollowingInProgress: action.isFollowingInProgress
@@ -79,7 +79,7 @@ export const toggleIsFatching = (isFatching) =>
 export const toggleIsFollowing = (isFollowingInProgress, userId) =>
     ({type: TOGGLE_IS_FOLLOWING, isFollowingInProgress, userId});
 
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
 
     return (dispatch) => {
 
