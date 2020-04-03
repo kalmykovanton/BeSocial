@@ -8,6 +8,7 @@ import {compose} from 'redux';
 
 class ProfileContainer extends Component {
 
+
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
@@ -23,7 +24,7 @@ class ProfileContainer extends Component {
     render() {
         return (
             <Profile {...this.props} profile={this.props.profile}
-            status={this.props.status.data} updateUserStatus={this.props.updateUserStatus} />
+            status={this.props.status} updateUserStatus={this.props.updateUserStatus} />
         )
     }
 

@@ -28,7 +28,7 @@ class UsersAPIContainer extends React.Component {
         const currentPage = data.selected + 1;
         this.props.setCurrentPage(currentPage);
         this.props.requestUsers(currentPage, this.props.pageSize);
-    }
+    };
 
     render() {
         return (<Users setCurrentPage={this.setCurrentPage}
@@ -43,16 +43,6 @@ class UsersAPIContainer extends React.Component {
     }
 }
 
-/*const mapStateToProps = (state) => {
-    return {
-        users: state.usersPage.users,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        pageSize: state.usersPage.pageSize,
-        isFatching: state.usersPage.isFatching,
-        isFollowingInProgress: state.usersPage.isFollowingInProgress
-    }
-};*/
 const mapStateToProps = (state) => {
     return {
         users: getUsers(state),
@@ -63,9 +53,6 @@ const mapStateToProps = (state) => {
         isFollowingInProgress: getIsFollowingInProgress(state)
     }
 };
-
-/*const UsersContainer = connect(mapStateToProps, {
-    follow, unfollow, setCurrentPage,getUsers })(UsersAPIContainer);*/
 
 export default compose(withAuthRedirect,
     connect(mapStateToProps, {
