@@ -7,9 +7,9 @@ import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field className={styles.textInput} component={Input}
                        name={'email'} placeholder={'Email'}
@@ -24,8 +24,8 @@ const LoginForm = (props) => {
                 <Field className={styles.checkbox} component={Input}
                        type="checkbox" name={'rememberMe'}/> <span>remember me</span>
             </div>
-            { props.error && <div className={styles.errorMessage}>
-                {props.error}
+            { error && <div className={styles.errorMessage}>
+                {error}
             </div>}
             <div className={styles.buttonContainer}>
                 <button className={styles.button}>Login</button>
@@ -36,13 +36,13 @@ const LoginForm = (props) => {
 
 const LoginReduxForm = reduxForm( { form: 'login' } )(LoginForm);
 
-const Login = (props) => {
+const Login = ({login, isAuth}) => {
 
    const onSubmit = (formData) => {
-       props.login(formData.email, formData.password, formData.rememberMe);
+       login(formData.email, formData.password, formData.rememberMe);
    };
 
-   if (props.isAuth)
+   if (isAuth)
        return (
            <Redirect to={'profile'}/>
        );

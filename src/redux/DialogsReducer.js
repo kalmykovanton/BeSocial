@@ -1,5 +1,4 @@
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const ADD_MESSAGE = 'beSocial/dialogs/ADD-MESSAGE';
 
 let initialState = {
     messages: [
@@ -27,9 +26,9 @@ const dialogsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 messages: [...state.messages, {
-                                    id: state.messages.length,
-                                    message: action.newMessageBody
-                            }]
+                    id: state.messages.length,
+                    message: action.newMessageBody
+                }]
             };
         default:
             return state;

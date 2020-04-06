@@ -5,7 +5,8 @@ import Post from './Post/Post';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
-	let postsItems = state.profilePage.posts
+	let postsItems = [...state.profilePage.posts]
+		.reverse()
 		.map( post => <Post message={post.message}
 							likesCounter={post.likesCounter}
 							date={post.date}/> );
@@ -14,12 +15,6 @@ const mapStateToProps = (state) => {
 	}
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-
-	}
-};
-
-const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(Posts);
+const PostsContainer = connect(mapStateToProps, null)(Posts);
 
 export default PostsContainer;
