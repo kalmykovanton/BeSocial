@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "242634e95156c8b7fa2d71b2264594bf",
+    "revision": "02ace22da153ae21256ba88e9d7790ee",
     "url": "/BeSocial/index.html"
   },
   {
-    "revision": "7bca2f6fb62c8fc64aa9",
+    "revision": "5d03c729994deb99c760",
     "url": "/BeSocial/static/css/3.cceaeca8.chunk.css"
   },
   {
-    "revision": "01049b9b80d37f0a2c70",
+    "revision": "cc9e9c04ebb8edfa412b",
     "url": "/BeSocial/static/css/4.14857822.chunk.css"
   },
   {
@@ -16,36 +16,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BeSocial/static/css/5.3bc3cc21.chunk.css"
   },
   {
-    "revision": "ad7c9d00ecd421e6a379",
+    "revision": "509cefd9de9b63394ad6",
     "url": "/BeSocial/static/css/main.77ab5e61.chunk.css"
   },
   {
-    "revision": "41034480ad46369e90f2",
-    "url": "/BeSocial/static/js/2.5384899c.chunk.js"
+    "revision": "4e493491793e0b4562d2",
+    "url": "/BeSocial/static/js/2.ba2b65a1.chunk.js"
   },
   {
     "revision": "928d7b5eb39d16fe9a880722c974b51e",
-    "url": "/BeSocial/static/js/2.5384899c.chunk.js.LICENSE.txt"
+    "url": "/BeSocial/static/js/2.ba2b65a1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7bca2f6fb62c8fc64aa9",
-    "url": "/BeSocial/static/js/3.dfaaf0cb.chunk.js"
+    "revision": "5d03c729994deb99c760",
+    "url": "/BeSocial/static/js/3.f9fdb7e6.chunk.js"
   },
   {
-    "revision": "01049b9b80d37f0a2c70",
-    "url": "/BeSocial/static/js/4.f193567c.chunk.js"
+    "revision": "cc9e9c04ebb8edfa412b",
+    "url": "/BeSocial/static/js/4.de1cf822.chunk.js"
   },
   {
     "revision": "47d9f5e36e7e3811dfd5",
     "url": "/BeSocial/static/js/5.731fac53.chunk.js"
   },
   {
-    "revision": "ad7c9d00ecd421e6a379",
-    "url": "/BeSocial/static/js/main.9cfda442.chunk.js"
+    "revision": "509cefd9de9b63394ad6",
+    "url": "/BeSocial/static/js/main.f0797cc0.chunk.js"
   },
   {
-    "revision": "19f367988ddc81eedd16",
-    "url": "/BeSocial/static/js/runtime-main.c2606f06.js"
+    "revision": "7fb38c158de290b20b17",
+    "url": "/BeSocial/static/js/runtime-main.5968d350.js"
   },
   {
     "revision": "1c24c7588e9bc28356e68261d9b40611",
