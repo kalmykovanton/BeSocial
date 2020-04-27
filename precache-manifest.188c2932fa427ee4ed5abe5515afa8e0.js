@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f340221a1838e489d74c7a5b2d6a6d20",
+    "revision": "242634e95156c8b7fa2d71b2264594bf",
     "url": "/BeSocial/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BeSocial/static/css/5.3bc3cc21.chunk.css"
   },
   {
-    "revision": "c39edafb5311a360da41",
+    "revision": "ad7c9d00ecd421e6a379",
     "url": "/BeSocial/static/css/main.77ab5e61.chunk.css"
   },
   {
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BeSocial/static/js/5.731fac53.chunk.js"
   },
   {
-    "revision": "c39edafb5311a360da41",
-    "url": "/BeSocial/static/js/main.0c30f80e.chunk.js"
+    "revision": "ad7c9d00ecd421e6a379",
+    "url": "/BeSocial/static/js/main.9cfda442.chunk.js"
   },
   {
     "revision": "19f367988ddc81eedd16",

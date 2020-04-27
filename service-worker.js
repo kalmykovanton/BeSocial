@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/BeSocial/precache-manifest.86522ccadca95dda09ae704deee3151b.js"
+  "/BeSocial/precache-manifest.188c2932fa427ee4ed5abe5515afa8e0.js"
 );
 
 self.addEventListener('message', (event) => {
