@@ -1,6 +1,7 @@
 {
   "name": "besocial",
   "type": "module",
+  "homepage": "https://konstantinkuksov.github.io/BeSocial",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -41,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "react-redux": "^7.2.0",
     "react-test-renderer": "^16.3.1"
   }
