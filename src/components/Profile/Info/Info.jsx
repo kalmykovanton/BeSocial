@@ -9,6 +9,11 @@ const Info = (props) => {
 		return <Preloader />
 	}
 
+	const onMainPhotoSelected = (event) => {
+		if (event.target.files.length)
+			props.savePhoto(event.target.files[0]);
+	};
+
 	return (
 		<div className={styles.container}>
 			<div>
@@ -24,6 +29,7 @@ const Info = (props) => {
 				<div className={styles.statusContainer}>
 					<ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
 				</div>
+				{ props.isOwner && <input type={'file'} onChange={ onMainPhotoSelected }/> }
 			</div>
 		</div>
 	)
